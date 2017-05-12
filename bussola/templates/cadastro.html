@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+
+{%load staticfiles%}
+
+<html>
+	<head>
+		<title>Bússola</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %}">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> 
+
+	</head>
+	<body>
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main" style="margin-left: 15%;">
+						<div class= "container-fluid">
+							<div class = "row">
+								<div class="inner" style="margin-top: 10%; margin-bottom: -10%; margin-right: 10%;">
+									<h2>Cadastre-se</h2>
+									<br>
+									<form method="post" action="#" style="margin-left: 5%;">
+										<div class="field">
+											<input type="text" name="name" placeholder="Nome" />
+											<br>
+											<input type="text" name="email" placeholder="Email" />
+											<br>
+											<input type="text" name="cnpj_cpf" placeholder="CNPJ ou CPF" />									
+											<br>
+											<input type="text" name="senha" placeholder="Senha" />									
+											<br>
+											<input type="text" name="confirmarSenha" placeholder="Confirme sua Senha" />
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Cadastrar" class="special" /></li>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+					
+		<!-- Scripts -->
+			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'assets/js/util.js' %}"></script>
+			<script src="{% static 'assets/js/main.js' %}"></script>
+
+	</body>
+</html>

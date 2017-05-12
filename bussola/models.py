@@ -121,4 +121,7 @@ class Avalia_local(models.Model):
 class Usuario_cidade(models.Model):
 	endereco = models.ForeignKey(Endereco)
 	cidade = models.ForeignKey(Cidade)
-	
+
+class fale_conosco(models.Model):
+    email = models.EmailField(max_length=254)
+    mensagem = models.CharField(max_length=200)
