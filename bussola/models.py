@@ -70,8 +70,8 @@ class Estabelecimeto(models.Model):
 
 class Usuario(models.Model):
 	cpf_cnpj = models.IntegerField()
-	senha = models.CharField(max_length=45)
 	email = models.EmailField(max_length=254)
+	senha = models.CharField(max_length=45)
 	nome = models.CharField(max_length=45)
 	foto = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
 
@@ -113,7 +113,7 @@ class Fale_conosco(models.Model):
 
 	def __str__ (self):
 		return self.email, self.mensagem
-		
+
 class Usuario_le_notificacao(models.Model):
 	notificacao = models.ForeignKey(Notificacao)
 	usuario = models.ForeignKey(Usuario)
