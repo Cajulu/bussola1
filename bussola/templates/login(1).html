@@ -13,12 +13,6 @@
 	</head>
 
 	<body>
-		
-		{% block content %}
-			{% if form.errors %}
-				<p>Seu nome de usuário ou senha não existem. Por favor, tente novamente.</p>
-			{% endif %}
-		
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -29,20 +23,16 @@
 								<div class="inner" style="margin-top: 30%; margin-bottom: -30%;">
 									<h2>Entre</h2>
 									<br>
-									<form method="post" action="{% url 'login' %}">
-										{% csrf_token %}
-										
+									<form method="post" action="#">
 										<div class="field">
-											{{form.as_p}}
+											<input type="email" name="email" id="email" placeholder="Email" />
+											<br>
+											<input type="password" name="senha" placeholder="Senha">
 										</div>
 										<ul class="actions" style="margin-left: 7%;">
-											<li><input type="submit" value="Cadastrar" class="special" /></li>
-											<li><input type="hidden" name="next" value="{{ next }}" /><li>
+											<li><input type="submit" value="Login" class="special" /></li>
 										</ul>
-										
-										
 									</form>
-								{% endblock %}
 								</div>
 							</div>
 						</div>
