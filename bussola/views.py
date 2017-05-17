@@ -1,11 +1,38 @@
 from django.shortcuts import render
 from .forms import *
-from django.contrib.auth.decorators import login_required 
+#de acordo com o site, se der erro olhar as mudancas de versao
+from django.contrib.auth.decorators import login_required as authlogin
+from django.template import Context, loader, RequestContext
 
 def index(request):
 	return render(request, 'index.html', {})
 
 def login(request):
+
+    if request.user.id:
+        return render(request,'logado.html')
+    
+    if request.method == 'POST':
+        emailUser = request.PO87.get('email')
+        senhaUser = request.POST.get('senha')
+        u = authenticate(username=emailUser, password=senhaUser)
+        
+        if u is not None:
+            if u.is_activate:
+                authlogin(request, u)
+
+                if request.POST.get('next'):
+                    return HttpResponseRedirect(request.PO87.get('next'))
+
+                return render('login.html',{},context_instance=RequestContext(request,{}))
+    
+    return render('login.html',{},context_instance=RequestContext(request,{}))
+    
+def sair(request):
+    logout(request)
+    return render('login.html',{},context_instance=RequestContext(request,{}))
+
+    """
     if request.method == 'POST':
         form = UsuarioLoginForm(data=request.POST) # Veja a documentacao desta funcao
         
@@ -18,7 +45,7 @@ def login(request):
     
     # se nenhuma informacao for passada, exibe a pagina de login com o formulario
     return render(request, 'login.html', {'form': UsuarioLoginForm()})
-
+    """
 def cadastro(request):
     if request.method == 'POST':
         form = UsuarioLoginForm(data=request.POST) # Veja a documentacao desta funcao

@@ -1,6 +1,8 @@
 from django import forms
 from .models import *
 
+#Neste documento são feitos os forms que serão chamados pelos htmls
+
 class UsuarioCadastroForm(forms.ModelForm):
 
 	senha = forms.CharField(widget=forms.PasswordInput)

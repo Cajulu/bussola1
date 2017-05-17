@@ -82,6 +82,11 @@ DATABASES = {
     }
 }
 
+#Login
+
+AUTH_PROFILE_MODULE = 'cadastro.cadastro'
+LOGIN_URL = '/bussola/login/'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -102,4 +107,3 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-LOGIN_REDIRECT_URL = '/'
