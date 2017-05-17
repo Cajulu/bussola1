@@ -1,59 +1,26 @@
-<!DOCTYPE HTML>
-
-{%load staticfiles%}
-
 <html>
 	<head>
-		<title>Bússola</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %}">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
-		 
+		<title>Login</title>
 	</head>
-
+	
 	<body>
-		
-		{% block content %}
-			{% if form.errors %}
-				<p>Seu nome de usuário ou senha não existem. Por favor, tente novamente.</p>
-			{% endif %}
-		
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Main -->
-					<div id="main" style="margin-left: 30%;">
-						<div class= "container-fluid">
-							<div class = "row" >
-								<div class="inner" style="margin-top: 30%; margin-bottom: -30%;">
-									<h2>Entre</h2>
-									<br>
-									<form method="post" action="{% url 'login' %}">
-										{% csrf_token %}
-										
-										<div class="field">
-											{{form.as_p}}
-										</div>
-										<ul class="actions" style="margin-left: 7%;">
-											<li><input type="submit" value="Entrar" class="special" /></li>
-											<li><input type="hidden" name="next" value="{{ next }}" /><li>
-										</ul>
-										
-										
-									</form>
-								{% endblock %}
-								</div>
-							</div>
-						</div>
-					</div>
-			</div>
+		<form name = "form1" method="post" action = "/bussola/login">
+			<label>Email:
+				<input type="text" name="email" id="email">
+			</label>
 			
-		<!-- Scripts -->
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<script src="{% static 'assets/js/main.js' %}"></script>
-
+			<br>
+			
+			<label>Senha:
+				<input type="password" name="senha" id="senha">
+			</label>
+			
+			<br>
+			
+			<label>:
+				<input type="submit" name="button" id="button" value="enviar">
+			</label>
+		</form>
 	</body>
 </html>
