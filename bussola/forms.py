@@ -1,23 +1,65 @@
+# -*- codinng: utf-8 -*- 
+from django.forms import ModelForm
 from django import forms
 from .models import *
 
 #Neste documento são feitos os forms que serão chamados pelos htmls
 
 class UsuarioCadastroForm(forms.ModelForm):
-
-	senha = forms.CharField(widget=forms.PasswordInput)
-
 	class Meta:
 		model = Usuario
 		fields = '__all__'
+		widgets = {
+			'nome': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'cpf_cnpj': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'email': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'senha': forms.PasswordInput(attrs={'class': 'form-control', 'maxlength':255}),
+			#'foto': forms.ImageInput(attrs={'class': 'form-control', 'maxlength':255}),
+		}
+
+		error_messages = {
+			'nome': {
+				'required': 'Este campo é obrigatório'
+			},
+
+			'cpf_cnpj': {
+				'required': 'Este campo é obrigatório'
+			},
+			
+			'email': {
+				'required': 'Este campo é obrigatório'
+			},
+
+			
+			'senha': {
+				'required': 'Este campo é obrigatório'
+			},
+
+		}
+	#salva no BD
+	def save(self, commit=True):
+		user = super(UsuarioCadastroForm, self).save(commit=False)
+		user.set_password()
+		if commit:
+			user.save()
 
 class UsuarioLoginForm(forms.ModelForm):
-	
-	senha = forms.CharField(widget=forms.PasswordInput)
-
 	class Meta:
 		model = Usuario
 		fields = ('email', 'senha',)
+		widgets = {
+			'email': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'senha': forms.PasswordInput(attrs={'class': 'form-control', 'maxlength':255}),
+		}
+
+		error_messages = {
+			'email': {
+				'required': 'Este campo é obrigatório'
+			},
+			'senha': {
+				'required': 'Este campo é obrigatório'
+			},
+		}
 
 class NotificacaoForm(forms.ModelForm):
 

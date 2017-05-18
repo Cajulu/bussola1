@@ -1,14 +1,11 @@
 from django.conf.urls import include, url
-from . import views 
+from . import views
 
 urlpatterns = [
-	url(r'^$', views.index),
-	url(r'^login/', views.login),
-	url(r'^sair/', views.sair),
-	url(r'^cadastro/', views.cadastro),
-	url(r'^fale_conosco/', views.fale_conosco),
-	url(r'^estabelecimento/', views.estabelecimento),
-	url(r'^lugares/', views.lugares),
-	url(r'^sobre_nos/', views.sobre_nos),
-	url(r'^sub_categoria/', views.sub_categoria),
+	url(r'^$', views.index, name='index'),
+	url(r'^login/', views.do_login, name='login'),
+	url(r'^logout/', views.do_logout, name='logout'),
+	url(r'^cadastro/', views.cadastro, name='cadastro'),
+	url(r'^estabelecimento/', views.estabelecimento, name='estabelecimento'),
+	url(r'^lugares/', views.lugares, name='lugares'),
 ]

@@ -1,159 +1,204 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 
-{%load staticfiles%}
+<head>
 
-<html>
-	<head>
-		<title>Bússola</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href=" {% static 'assets/css/main.css' %}">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-		<script languague="javascript">
-			function login(){
-				window.open('login.html','popup','width=500,height=500,top=100,left=400')
-			}
-		</script>
+    <title>Bússola</title>
 
-		<script languague="javascript">
-			function cadastro(){
-				window.open('cadastro.html','popup','width=500,height=500,top=100,left=400')
-			}
-		</script>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-		<script languague="javascript">
-			function sobre_nos(){
-				window.open('sobre_nos.html','popup','width=400,height=400,top=160,left=470')
-			}
-		</script>
-		
-		<script languague="javascript">
-			function fale_conosco(){
-				window.open('fale_conosco.html','popup','width=400,height=400,top=160,left=470')
-			}
-		</script>
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
 
-	</head>
-	<body>
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
+</head>
 
-							<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="{% static 'images/logo.png' %}" alt="" /></span><span class="title">Bússola</span>
-								</a>
+<body id="page-top" class="index">
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
 
-								<h1><a href="index.html">Home</a> > <a href="sub_categoria.html"> Alimentação > </a><a href="lugares.html"> Lanchonetes </a> > </a><a href="estabelecimento.html"> Estabelecimento</a></h1>
-														
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Bússola</a>
+            </div>
 
-						</div>
-					</header>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">Galeria de Fotos</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Avaliações</a>
+                    </li>
+					 <li class="page-scroll">
+                        <a href="usuario.html"><img src="img/login.png" class="img-responsive" style="width:20px;height:20px;float:left;margin-right:6px;">Bem Vindo, usuário</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="#popup" onclick="login()">Login</a></li>
-							<li><a href="#popup" onclick="cadastro()">Cadastre-se</a></li>
-							<li><a href="#popup" onclick="sobre_nos()">Sobre nós</a></li>
-							<li><a href="#popup" onclick="fale_conosco()">Fale Conosco</a></li>
-						</ul>
-					</nav>
+    <!-- INFORMAÇÕES PRINCIPAIS -->
+   <header>
+        <div class="container" id="banner" tabindex="-1">
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <h1 class="name sombra">Nome do Serviço</h1>
+                    </div>
+                </div>  
+                <div class="row">
+                    Avaliação <br>
+                    Endereço <br>
+                    Informações sobre o serviço <br>
+                </div>
+            </div>
+        </div>
+    </header>
 
-				<!-- Main -->
-					<div id="main">
-						<div class="inner">
-						<div class="row">
-							<div class="col-sm-6">
-							<h1>Minuano</h1> <ul class="actions"><input type="submit" value="Seguir" class="special" /></ul>
-								Av. Augusto Emílio Estelita Lins, 465 - Jardim Camburi, Vitória, 29090-720 - ES<br>
-								3376-4667<br>
-								AVALIAÇÃO<br>
-								Hambúrgueres, sanduíches de filé e carnes na chapa, mais sucos e açaís, <br>em lanchonete com serviço de delivery.<br>
-							</div>
-							<div class="col-sm-6" style="margin-top: 6%; margin-left: 10%;">
-								<iframe width="400" height="300" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3743.1865156697427!2d-40.26966768552937!3d-20.25109798642472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb8190005953b3f%3A0x49f4f3d2ff3e5b7d!2sAv.+Augusto+Em%C3%ADlio+Estelita+Lins%2C+465+-+Jardim+Camburi%2C+Vit%C3%B3ria+-+ES!5e0!3m2!1spt-BR!2sbr!4v1494084068969" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-							</div>
-						</div>
-							<section class="tiles">
-								<article class="style1">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="lugares.html">
-										<h2></h2>
-									</a>
-								</article>
-								<article class="style2">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2></h2>
-									</a>
-								</article>
-								<article class="style3">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2></h2>
-									</a>
-								</article>
-								<article class="style4">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Bares</h2>
-									</a>
-								</article>
-								<article class="style5">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Padarias</h2>
-									</a>
-								</article>
-								<article class="style6">
-									<span class="image">
-										<img src="{% static 'images/pic01.jpg' %}" alt="" />
-									</span>
-									<a href="generic.html">
-										<h2>Sorveterias</h2>
-									</a>
-								</article>
-							</section>
-							NOVIDADES
-							<hr>
-						</div>
-					</div>
-			</div>
+    <!-- GALERIA -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Galeria de Fotos</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/alimentacao.png" class="img-responsive" alt="Alimantação">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/reformas_reparos.jpg" class="img-responsive" alt="Reformas e Reparos">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/arte_cultura.jpg" class="img-responsive" alt="Arte e Cultura">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/moda.jpg" class="img-responsive" alt="Moda">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                        <img src="img/portfolio/saude.jpg" class="img-responsive" alt="Saúde">
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                        <img src="img/portfolio/educacao.jpg" class="img-responsive" alt="Educação">
+                </div>
+				<div class="col-sm-4 portfolio-item">                       
+                        <img src="img/portfolio/estetica_beleza.jpg" class="img-responsive" alt="Estética e Beleza">
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                        <img src="img/portfolio/administracao.jpg" class="img-responsive" alt="Administração">
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/animais.jpg" class="img-responsive" alt="Animais">
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/decoracao.jpg" class="img-responsive" alt="Decoração">
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/hospedagem.jpg" class="img-responsive" alt="Hospedagem">
+                </div>
+				<div class="col-sm-4 portfolio-item">
+                    <img src="img/portfolio/informatica.jpg" class="img-responsive" alt="Informática">
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Rodapé -->
-			<div class="row" style="padding-left:63%;">
-				<ul>
-					&copy; Untitled. All rights reserved Design: <a href="http://html5up.net">HTML5 UP</a> 
-				</ul>
-			</div>
+    <!-- CLASSIFIQUE -->
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>AVALIE ESTE SERVIÇO</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                ESTRELINHAS DE AVALIAÇÃO
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label for="message">Comentário</label>
+                                <textarea rows="1" class="form-control" placeholder="Adicione um comentário" id="message" required data-validation-required-message="Por favor insira comentário."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Enviar</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-			<script src="{% static 'assets/js/jquery.min.js' %}"></script>
-			<script src="{% static 'assets/js/skel.min.js' %}"></script>
-			<script src="{% static 'assets/js/util.js' %}"></script>
-			<script src="{% static 'assets/js/main.js' %}"></script>
+    <!-- RODAPÉ -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Your Website 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-	</body>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+    
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+</body>
+
 </html>

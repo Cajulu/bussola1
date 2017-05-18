@@ -20,5 +20,5 @@ from django.contrib.auth import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'', include('bussola.urls')),
+    url(r'', include('bussola.urls', namespace='bussola', app_name='bussola')),
 ]

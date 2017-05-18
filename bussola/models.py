@@ -19,7 +19,7 @@ class Servico(models.Model):
 	informacoes_adicionais = models.CharField(max_length=200)
 
 	def __str__(self):
-		return self.preco, self.nome, self.informacoes_adicionais
+		return self.nome
 
 
 class Sub_categoria(models.Model):
@@ -76,7 +76,7 @@ class Usuario(models.Model):
 	foto = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
 
 	def __str__(self):
-		return self.cpf_cnpj,self.senha,self.email,self.nome,self.foto
+		return self.nome
 
 class Endereco (models.Model):
 	complemento = models.CharField(max_length=45)
@@ -85,7 +85,7 @@ class Endereco (models.Model):
 	rua = models.CharField(max_length=45)
 
 	def __str__(self):
-		return self.complemento,self.bairro,self.numero,self.rua
+		return self.bairro
 
 class Avaliacao_estabelecimento(models.Model):
 	numero_estrelas_est = models.IntegerField()
@@ -112,7 +112,7 @@ class Fale_conosco(models.Model):
 	mensagem = models.CharField(max_length=200)
 
 	def __str__ (self):
-		return self.email, self.mensagem
+		return self.email
 
 class Usuario_le_notificacao(models.Model):
 	notificacao = models.ForeignKey(Notificacao)

@@ -56,7 +56,9 @@ ROOT_URLCONF = 'cajulu.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR +'/templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -82,10 +84,6 @@ DATABASES = {
     }
 }
 
-#Login
-
-AUTH_PROFILE_MODULE = 'cadastro.cadastro'
-LOGIN_URL = '/bussola/login/'
 
 
 # Internationalization
@@ -107,3 +105,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#Login
+LOGIN_URL = '/login'
