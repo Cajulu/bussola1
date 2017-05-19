@@ -12,7 +12,7 @@ class UsuarioCadastroForm(forms.ModelForm):
 		widgets = {
 			'nome': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
 			'cpf_cnpj': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
-			'email': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'email': forms.EmailInput(attrs={'class': 'form-control', 'maxlength':255}),
 			'senha': forms.PasswordInput(attrs={'class': 'form-control', 'maxlength':255}),
 			#'foto': forms.ImageInput(attrs={'class': 'form-control', 'maxlength':255}),
 		}
@@ -37,11 +37,14 @@ class UsuarioCadastroForm(forms.ModelForm):
 
 		}
 	#salva no BD
+	
 	def save(self, commit=True):
 		user = super(UsuarioCadastroForm, self).save(commit=False)
 		user.set_password()
 		if commit:
 			user.save()
+
+		return user
 
 class UsuarioLoginForm(forms.ModelForm):
 	class Meta:

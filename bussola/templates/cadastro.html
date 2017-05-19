@@ -1,0 +1,56 @@
+{% extends 'cadastro_base.html' %}
+{% block content %}
+
+
+<a href="{% url 'bussola:logout' %}">Logout</a>
+
+<form action="{% url 'bussola:cadastro' %}" name="cadastro" id="contactForm" method="POST">
+    {% csrf_token %}
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
+            {{ form.nome }}
+            {{ form.nome.errors }}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <input type="text" class="form-control" placeholder="CNPJ ou CPF" name="cpf_cnpj" id="cpf_cnpj">
+            {{ form.cpf_cnpj }}
+            {{ form.cpf_cnpj.errors }}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+            {{ form.email }}
+            {{ form.email.errors }}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha">
+            {{ form.senha }}
+            {{ form.senha.errors }}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <input type="text" class="form-control" placeholder="Foto" name="foto" id="foto">
+            {{ form.foto }}
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <br>
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-success btn-lg">Cadastrar</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'login_base.html' %}
+
+{% block content %}
+
+<form action="{% url 'bussola:login' %}" name="login" id="contactForm" method="POST">
+    {% csrf_token %}
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" placeholder="Email" name="email" id="email" required data-validation-required-message="Por favor insira seu endereço de e-mail.">
+            <p class="help-block text-danger"></p>
+        </div>
+    </div>
+    <div class="row control-group">
+        <div class="form-group col-xs-12 floating-label-form-group controls">
+            <label for="senha">Senha</label>
+            <input type="password" class="form-control" placeholder="Senha" name="senha" id="senha" required data-validation-required-message="Por favor insira sua senha.">
+            <p class="help-block text-danger"></p>
+        </div>
+        <a style="margin-left: 1.5%;" href="contato.html">Esqueci minha senha!</a>
+    </div>
+    <br>
+    <div id="success"></div>
+    <div class="row">
+        <div class="form-group col-xs-12">
+            <button type="submit" class="btn btn-success btn-lg">Entrar</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
