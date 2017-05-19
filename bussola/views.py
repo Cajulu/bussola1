@@ -3,7 +3,7 @@ from .forms import *
 from .models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from bussola.models import Usuario
 
 def index(request):
