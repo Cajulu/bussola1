@@ -13,7 +13,7 @@ def do_login(request):
     if request.method == 'POST':
         user=authenticate(email=request.POST['email'], senha=request.POST['senha'])
         if user is not None:
-            login(request, usuario)
+            login(request, user)
             return redirect('/index/')
     return render(request, 'login.html')
 
