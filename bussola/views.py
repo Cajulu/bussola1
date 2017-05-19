@@ -11,8 +11,8 @@ def index(request):
 
 def do_login(request):
     if request.method == 'POST':
-        usuario=authenticate(email=request.POST['email'], senha=request.POST['senha'])
-        if usuario is not None:
+        user=authenticate(email=request.POST['email'], senha=request.POST['senha'])
+        if user is not None:
             login(request, usuario)
             return redirect('/index/')
     return render(request, 'login.html')
