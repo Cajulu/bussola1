@@ -5,6 +5,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required 
 from django.http import HttpResponse
 from bussola.models import Usuario
+from django.contrib.auth.models import User
 
 def index(request):
 	return render(request, 'index.html', {})
