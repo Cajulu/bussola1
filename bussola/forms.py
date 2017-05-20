@@ -3,20 +3,22 @@ from django.forms import ModelForm
 from django import forms
 from .models import *
 
+
 #Neste documento são feitos os forms que serão chamados pelos htmls
 
 class UsuarioCadastroForm(forms.ModelForm):
 	class Meta:
 		model = Usuario
 		fields = '__all__'
+		
 		widgets = {
-			'nome': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
-			'cpf_cnpj': forms.TextInput(attrs={'class': 'form-control', 'maxlength':255}),
-			'email': forms.EmailInput(attrs={'class': 'form-control', 'maxlength':255}),
-			'senha': forms.PasswordInput(attrs={'class': 'form-control', 'maxlength':255}),
-			#'foto': forms.ImageInput(attrs={'class': 'form-control', 'maxlength':255}),
+			'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Nome', 'name':'nome', 'id':'nome','maxlength':255}),
+			'cpf_cnpj': forms.TextInput(attrs={'class': 'form-control','placeholder':'CPF ou CNPJ', 'name':'cpf_cnpj', 'id':'cpj_cnpj', 'maxlength':255}),
+			'email': forms.EmailInput(attrs={'class': 'form-control','placeholder':'Email', 'name':'email', 'id':'email', 'maxlength':255}),
+			'senha': forms.PasswordInput(attrs={'class': 'form-control','placeholder':'Senha', 'name':'senha', 'id':'senha', 'maxlength':255}),
+			
 		}
-
+		
 		error_messages = {
 			'nome': {
 				'required': 'Este campo é obrigatório'

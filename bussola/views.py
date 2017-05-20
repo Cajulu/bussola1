@@ -12,10 +12,10 @@ def index(request):
 
 def do_login(request):
     if request.method == 'POST':
-        user=authenticate(email=request.POST['email'], senha=request.POST['senha'])
+        user=authenticate(usarname=request.POST['email'], password=request.POST['senha'])
         if user is not None:
             login(request, user)
-            return redirect('/index/')
+            return redirect('/cadastro/')
     return render(request, 'login.html')
 
 def do_logout(request):
@@ -24,8 +24,7 @@ def do_logout(request):
 
 
 def cadastro(request):
-    form = UsuarioCadastroForm(request.POST or None)
-    context = {'form':form}
+    form = UsuarioCadastroForm(request.POST, request.FILES)
     if request.method == 'POST':
         if form.is_valid():
             cpf_cnpj = form.cleaned_data['cpf_cnpj']
@@ -34,10 +33,12 @@ def cadastro(request):
             senha = form.cleaned_data['senha']
             foto = form.cleaned_data['foto']
             usuario = Usuario.objects.create(cpf_cnpj=cpf_cnpj, nome=nome, email=email, senha=senha, foto=foto)
-            print(usuario)
             usuario.save()
-            return redirect('/index/')
-            #return HttpResponseRedirect(request_POST.get('next')) 
+            return redirect('/login/')
+    else:
+        form = UsuarioCadastroForm()
+    
+    context = {'form':form}
     return render(request, 'cadastro.html', context)
 
 
